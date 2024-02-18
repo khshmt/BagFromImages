@@ -1,0 +1,8 @@
+left_imgs_path: "/home/khshmt/calibration_ws/static_calibration_images/imgs/left_images"
+right_imgs_path: "/home/khshmt/calibration_ws/static_calibration_images/imgs/right_images"
+left_imgs_topic: "/camera/left/image_raw"
+right_imgs_topic: "/camera/right/image_raw"
+imgs_extention: ".png"
+imgs_encoding: "bgr8" #!< Image encoding ("mono8", "bgr8", "rgb8", etc.)
+frequency: 20.0
+output_bag_path: "/home/khshmt/output.bag"

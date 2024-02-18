@@ -1,0 +1,6 @@
+.vscode/
+build/
+lib/
+read
+parse
+sandbox

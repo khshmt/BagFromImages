@@ -1,17 +1,17 @@
 # BagFromImages
 
-ROS package to generate a rosbag from a collection of images. Images are ordered alphabetically. The timestamp for each image is assigned according to the specified frequency. 
+ROS package to generate a rosbag from a collection of images from stereo camera setup. Images are ordered alphabetically. The timestamp for each image is assigned according to the specified frequency. 
 
-The bag will publish the images to topic `/camera/image_raw`.
-
-Tested in ROS Fuerte.
+Tested in ROS noetic.
 
 ## Installation
 
 In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
 
     git clone https://github.com/raulmur/BagFromImages.git BagFromImages
-    
+    source /opt/ros/${ROS_DISTRO}/setup.zsh #the package developed and tested using ros noetic
+    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:Path_to_BagFromImages_package_root_dir
+
     cd BagFromImages
     mkdir build
     cd build
@@ -20,10 +20,15 @@ In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
 
 ## Usage:
 
-    rosrun BagFromImages BagFromImages PATH_TO_IMAGES IMAGE_EXTENSION FREQUENCY PATH_TO_OUPUT_BAG
-  
- - `PATH_TO_IMAGES`: Path to the folder with the images
- - `IMAGE_EXTENSION`: .jpg, .png, etc. write the dot "."
- - `FREQUENCY`: Frames per second.
- - `PATH_TO_OUTPUT_BAG`: Path to save the bag (including the filename e.g. directory/filename.bag)
+    rosrun BagFromImages BagFromImages parameters.yaml
+
+    parameters:-
+        left_imgs_path: "~/images/imgs/left_images"
+        right_imgs_path: "~/images/imgs/right_images"
+        left_imgs_topic: "/camera/left/image_raw"
+        right_imgs_topic: "/camera/right/image_raw"
+        imgs_extention: ".png"
+        imgs_encoding: "bgr8" #!< Image encoding ("mono8", "bgr8", "rgb8", etc.)
+        frequency: 20.0
+        output_bag_path: "~/images/output.bag"
 
