@@ -11,7 +11,7 @@ In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
     git clone https://github.com/raulmur/BagFromImages.git BagFromImages
 
     cd BagFromImages
-    source /opt/ros/${ROS_DISTRO}/setup.zsh # the package developed and tested using ros noetic
+    source /opt/ros/${ROS_DISTRO}/setup.bash
     export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:${PWD}
     mkdir build
     cd build
