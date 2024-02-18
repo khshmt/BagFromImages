@@ -9,10 +9,10 @@ Tested in ROS noetic.
 In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
 
     git clone https://github.com/raulmur/BagFromImages.git BagFromImages
-    source /opt/ros/${ROS_DISTRO}/setup.zsh #the package developed and tested using ros noetic
-    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:Path_to_BagFromImages_package_root_dir
 
     cd BagFromImages
+    source /opt/ros/${ROS_DISTRO}/setup.zsh # the package developed and tested using ros noetic
+    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:${PWD}
     mkdir build
     cd build
     cmake ..
@@ -28,7 +28,7 @@ In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
         left_imgs_topic: "/camera/left/image_raw"
         right_imgs_topic: "/camera/right/image_raw"
         imgs_extention: ".png"
-        imgs_encoding: "bgr8" #!< Image encoding ("mono8", "bgr8", "rgb8", etc.)
+        imgs_encoding: "bgr8" # Image encoding ("mono8", "bgr8", "rgb8", etc.)
         frequency: 20.0
         output_bag_path: "~/images/output.bag"
 

@@ -70,7 +70,6 @@ int main(int argc, char *argv[]) {
 
     if(left_filenames.size() != right_filenames.size()) {
         std::cout << "left and right images have different sizes\n";
-        return EXIT_FAILURE;
     }
     std::cout << "Left_Images: " << left_filenames.size() << '\n';
     std::cout << "Right_Images: " << right_filenames.size() << '\n';
